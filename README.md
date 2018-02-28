@@ -4,7 +4,7 @@
 [![Sync Gitee](https://img.shields.io/badge/sync-gitee-green.svg)](https://gitee.com/game-helper/eleme)
 [![Build Status](https://travis-ci.org/game-helper/hongbao.svg?branch=master)](https://travis-ci.org/game-helper/hongbao)
 
-一键领取饿了么、美团手气最佳红包 http://www.elemhb.top/
+一键领取饿了么、美团手气最佳红包
 
 > 仅供学习交流之用，请勿用于非法用途，否则产生的一切后果自行承担
 
