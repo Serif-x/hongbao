@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>小程序名</th>
+     <th>小程序名</th>
     <th>小程序码</th>
   </tr>
   <tr></tr>
