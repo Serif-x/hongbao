@@ -14,7 +14,7 @@
   <tr>
     <td>服务端</td>
     <td><a href="server">server</a></td>
-    <td></td>
+    <td>https://hongbao.xxooweb.com/</td>
   </tr>
   <tr></tr>
   <tr>
