@@ -28,7 +28,7 @@ gulp.task('web', () => gulp.src('web/dist/**/*').pipe(ossSync({
   },
   controls: {
     headers: {
-      'Cache-Control': 'max-age=600'
+      'Cache-Control': 'max-age=1800'
     }
   }
 })))
