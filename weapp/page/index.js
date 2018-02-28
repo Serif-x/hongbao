@@ -31,6 +31,14 @@ Page({
       }
     })
   },
+  copyUrl () {
+    wx.setClipboardData({
+      data: 'http://www.elemhb.top',
+      success: () => wx.showToast({
+        title: '复制网址成功'
+      })
+    })
+  },
   onShareAppMessage () {
     return {
       title: '一键领取饿了么、美团手气最佳红包',

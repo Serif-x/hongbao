@@ -62,12 +62,7 @@
   font-weight: bold;
 }
 
-.qrcode {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.qrcodet {
-  font-weight: bold;
+.website {
+  text-align: center;
+  white-space: nowrap;
 }

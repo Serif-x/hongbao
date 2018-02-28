@@ -21,9 +21,7 @@
       <view class="helpc">长按微信分享的卡片，点击更多，发送邮件，复制链接</view>
     </view>
   </view>
-  <view class="qrcode">
-    <image mode="widthFix" src="../image/qrcode.png" />
-    <view class="qrcodet">红包分享交流微信群</view>
-    <view>请加上面的微信号邀请你入群</view>
+  <view class="website" bindtap="copyUrl">
+    更多功能请访问网页版 <text>http://www.elemhb.top</text>
   </view>
 </view>
