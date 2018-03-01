@@ -13,6 +13,12 @@
         </p>
       </div>
       <div class="form-group">
+        <label>选择服务器线路</label>
+        <select class="form-control" v-model="domain">
+          <option v-for="(url, index) in domains" :value="index">{{index + 1}}号服务器</option>
+        </select>
+      </div>
+      <div class="form-group">
         <button type="button" class="btn btn-danger submit" :disabled="submit" @click="getHongbao">
           {{submit ? '正在领取...' : '马上领取'}}
         </button>
@@ -33,8 +39,8 @@
         <pre><b>如何复制红包链接？</b><br>分享到 QQ，选择 “我的电脑”，PC 版 QQ 复制链接<br>分享到微信，PC 版微信右键用浏览器打开，复制链接<br>长按微信分享的卡片，点击更多，发送邮件，复制链接</pre>
       </div>
       <div>
-        <img src="./static/qrcode.png">
-        <p class="text-center"><b>红包分享交流微信群</b><br>请加上面的微信号邀请你入群</p>
+        <img src="./static/qrcode.jpg">
+        <p class="text-center"><b>红包分享交流微信群</b><br>请加上面的微信号邀请你入群<br>（加群的朋友非常多，请耐心等待通过）</p>
       </div>
     </div>
   </div>
@@ -43,27 +49,28 @@
 <script>
   import 'bootstrap/dist/css/bootstrap.css'
   import axios from 'axios'
+  import domains from './service/domains'
+  import random from './service/random'
 
   export default {
     data () {
       return {
         url: '',
-        mobile: '',
-        submit: false
+        mobile: localStorage.getItem('mobile') || '',
+        submit: false,
+        domains,
+        domain: random(0, domains.length - 1)
       }
-    },
-    mounted () {
-      this.mobile = localStorage.getItem('mobile') || ''
     },
     methods: {
       async getHongbao () {
         if (this.submit) {
           return
         }
-        const {url, mobile} = this
+        const {url, mobile, domain} = this
         this.submit = true
         try {
-          const {data: {message}} = await axios.post(`${process.env.API_URL}/hongbao`, {url, mobile})
+          const {data: {message}} = await axios.post(`${domains[domain]}/hongbao`, {url, mobile})
           alert(message)
         } catch (e) {
           console.error(e)
